@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Egael Info</title>
+  <style>
+    :root {
+      --bg-light: #0f0f0f;
+      --text-light: #f1f1f1;
+      --accent: #212aad;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .card {
+      max-width: 600px;
+      margin: auto;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+      background-color: inherit;
+      text-align: center;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .name {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+
+    .role {
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .bio {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-icons a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      font-size: 1.4rem;
+      color: var(--accent);
+      transition: transform 0.2s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    .toggle-button {
+      margin-top: 2rem;
+      background-color: var(--accent);
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <img src="images/profile.jpg" alt="Foto de Egael" class="profile-img">
+    <div class="name">Egael Valle</div>
+    <div class="role">Artista</div>
+    <div class="bio">
+      <p>📍 Zacatecas, MX</p>
+      <p>🌵 Director de Pelando la Tuna</p>
+      <p>💻 Estudiante de Ingeniería en Sistemas</p>
+      <p>🎭 Melomano, cantante (en proceso) y fan del arte</p>
+      <p>🎤 Narrador, creativo y laferte </p>
+    </div>
+
+    <div class="social-icons">
+        <a href="https://www.wa.me/524921298921" target="_blank" title="WhatsApp"><i
+            class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/holasoyegael" target="_blank" title="Instagram"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@holasoyegael?_t=zs-8yhghtri99l&_r=1" target="_blank" title="Tik Tok"><i
+            class="fab fa-tiktok"></i></a>
+        <p></p>
+        <a href="https://twitter.com/EgaelValle" target="_blank" title="Twitter"><i
+            class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/elperrocaliente_zac" target="_blank" title="Bussines"><i
+            class="fas fa-hotdog"></i></a>
+    </div>
+
+  </div>
+</body>
+
+</html>
