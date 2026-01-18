@@ -58,18 +58,6 @@ padding: 20px 5px 40px;
 margin-top: 10px;
 }
 
-.tarjeta-wrapper .container {
-background-color: #ffffff;
-display: flex;
-flex-direction: column;
-width: 100%;
-max-width: 480px;
-border-radius: 25px;
-box-shadow: 0 0 10px rgba(0,0,0,0.1);
-text-align: center;
-overflow: hidden;
-}
-
 .profile-title {
 margin-top: 10px;
 font-size: 16px;
@@ -86,3 +74,4 @@ font-size: 16px;
 margin: 10px;
 text-decoration: none;
 }
+
