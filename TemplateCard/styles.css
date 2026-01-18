@@ -1,0 +1,88 @@
+:root {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.tarjeta-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem 4rem;
+  background: #f0f0f0;
+}
+
+.container {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  text-align: center;
+  overflow: hidden;
+}
+
+.profile-background {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-image {
+width: 140px;
+height: 140px;
+border-radius: 50%;
+border: 5px solid #fff;
+display: block;
+margin: -70px auto 0 auto;
+}
+
+.social-icons-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.social-icon, .profile-badges img {
+    width: 48px;
+    height: 48px;
+}
+
+.social-links-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: #f9f9f9;
+padding: 20px 5px 40px;
+margin-top: 10px;
+}
+
+.tarjeta-wrapper .container {
+background-color: #ffffff;
+display: flex;
+flex-direction: column;
+width: 100%;
+max-width: 480px;
+border-radius: 25px;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+text-align: center;
+overflow: hidden;
+}
+
+.profile-title {
+margin-top: 10px;
+font-size: 16px;
+color: #777;
+}
+
+.save-contact-button{
+display: inline-block;
+background-color: #202020;
+color: #fff;
+border-radius: 30px;
+padding: 10px 30px;
+font-size: 16px;
+margin: 10px;
+text-decoration: none;
+}

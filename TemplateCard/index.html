@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Digital</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<section class="tarjeta-wrapper">
+    <div class="container">
+    <div class="profile-background" id="portada"></div>
+    <img id="foto" class="profile-image">
+
+    <h1 class="profile-name" id="nombre"></h1>
+    <p class="profile-title" id="descripcion"></p>
+
+    <div class="profile-badges">
+      <a id="tel"><img src="https://cdn-icons-png.flaticon.com/128/12887/12887934.png"></a>
+      <a id="mail"><img src="https://cdn-icons-png.flaticon.com/128/80/80599.png"></a>
+    </div>
+
+    <a href="#" id="guardarContactoBtn" class="save-contact-button">
+      Guardar contacto
+    </a>
+
+    <div class="social-links-container">
+      <div class="social-icons-row" id="redes"></div>
+    </div>
+</div>
+
+</section>
+
+<script src="config.js"></script>
+
+<script>
+document.getElementById("nombre").innerText = tarjeta.nombre;
+document.getElementById("descripcion").innerText = tarjeta.descripcion;
+document.getElementById("foto").src = tarjeta.foto;
+document.getElementById("portada").style.backgroundImage =
+    `url('${tarjeta.portada}')`;
+
+document.getElementById("tel").href = "tel:" + tarjeta.telefono;
+document.getElementById("mail").href = "mailto:" + tarjeta.correo;
+
+// redes
+const contenedor = document.getElementById("redes");
+
+tarjeta.redes.forEach(red => {
+    const a = document.createElement("a");
+    a.href = red.link;
+    a.target = "_blank";
+
+    const img = document.createElement("img");
+    img.src = red.icono;
+    img.className = "social-icon";
+
+    a.appendChild(img);
+    contenedor.appendChild(a);
+});
+</script>
+
+</body>
+</html>
