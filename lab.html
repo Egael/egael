@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Laboratorio — Capa Zero</title>
+    <link rel="icon" href="img/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            background: #000;
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+        }
+
+        section {
+            padding: 100px 10%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+
+        p {
+            opacity: .7;
+            line-height: 1.6;
+        }
+
+        /* GRID */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+        }
+
+        /* CARDS */
+
+        .card {
+            background: #111;
+            padding: 30px;
+            border-radius: 14px;
+            transition: .4s;
+        }
+
+        .card-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            height: 220px;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .5s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            background: #151515;
+        }
+
+        /* PROFILE */
+
+        .profile {
+            text-align: center;
+        }
+
+        .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 15px auto;
+        }
+
+        .role {
+            opacity: .6;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .socials {
+            margin-top: 10px;
+        }
+
+        .socials a {
+            color: white;
+            opacity: .6;
+            margin: 0 8px;
+            text-decoration: none;
+        }
+
+        .socials a:hover {
+            opacity: 1;
+        }
+
+        .hero {
+            text-align: center;
+            padding-top: 140px;
+            padding-bottom: 140px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        .back-home {
+            text-align: center;
+            padding: 120px 10%;
+        }
+
+        .home-button {
+            background: white;
+            color: black;
+            padding: 16px 36px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: .3s;
+        }
+
+        .home-button:hover {
+            background: #eaeaea;
+            transform: translateY(-3px);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="hero">
+
+        <h1>Laboratorio Capa Zero</h1>
+
+        <p>
+            Convertimos tus ideas en objetos físicos.
+        </p>
+
+    </section>
+
+    <section>
+
+        <h2>Historia</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/inicio.jpg" alt="Inicio del proyecto">
+                </div>
+                <h3>Inicio</h3>
+                <p>Primeras impresiones 3D y experimentos con objetos personalizados.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/exploracion.jpg" alt="Exploración">
+                </div>
+                <h3>Exploración</h3>
+                <p>Llaveros personalizados y las primeras pruebas con tecnología NFC.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/creacion.jpg" alt="Creación de objetos">
+                </div>
+                <h3>Capa Zero</h3>
+                <p>Un laboratorio creativo donde intentamos convertir ideas en objetos reales.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2>Equipo</h2>
+
+        <div class="grid">
+            <div class="card profile">
+                <img src="img/egael.jpg">
+                <h3>Egael</h3>
+                <div class="role">
+                    Fundador
+                </div>
+                <p>
+                    Diseño · Desarrollo · Ideas raras
+                </p>
+                <div class="socials">
+                    <a href="https://www.instagram.com/holasoyega/" target="_blank">Instagram</a>
+                </div>
+            </div>
+
+            <div class="card profile">
+                <img src="img/isaac.jpg">
+                <h3>Isaac</h3>
+                <div class="role">
+                    Producción
+                </div>
+                <p>
+                    Prototipado · Impresión 3D
+                </p>
+                <div class="socials">
+                    <a href="https://www.instagram.com/isaac_131015/">Instagram</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2>Colaboradores</h2>
+
+        <div class="grid">
+
+            <div class="card profile">
+                <img src="img/creatif.jpg" alt="Crea.Tif">
+                <h3>Crea.Tif</h3>
+                <p>ESPECIALISTAS EN IMPRESIÓN</p>
+                <p>Centro de Distribución de Capa Zero</p>
+                <div class="socials">
+                    <a href="https://www.instagram.com/crea.tif_zac/" target="_blank">Instagram</a>
+                </div>
+
+            </div>
+
+            <div class="card profile">
+                <img src="img/moonshop.jpg" alt="Moon Shop">
+                <h3>Moon Shop</h3>
+                <p>Tienda de accesorios hechos artesanalmente</p>
+                <p>Centro de Distribución de Capa Zero</p>
+                <div class="socials">
+                    <a href="https://www.instagram.com/moonshop_676/" target="_blank">Instagram</a>
+                </div>
+            </div>
+
+            <div class="card profile">
+                <img src="img/vale.jpeg" alt="Vale">
+                <h3>Valentina Vazquez Ojeda</h3>
+                <p>Distribuidora de productos de Capa Zero</p>
+                <div class="socials">
+                    <a href="https://www.instagram.com/_valenvazz/" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="back-home">
+        <a href="index.html" class="home-button">Volver al inicio</a>
+    </section>
+</body>
+
+</html>

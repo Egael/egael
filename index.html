@@ -2,123 +2,513 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <title>Egael Info</title>
-  <style>
-    :root {
-      --bg-light: #0f0f0f;
-      --text-light: #f1f1f1;
-      --accent: #212aad;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 2rem;
-      background-color: var(--bg-light);
-      color: var(--text-light);
-      transition: background-color 0.3s, color 0.3s;
-    }
+    <title>Capa Zero</title>
 
-    .dark-mode {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
+    <link rel="icon" href="img/capacircular.png">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
-    .card {
-      max-width: 600px;
-      margin: auto;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-      background-color: inherit;
-      text-align: center;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+        }
 
-    .profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--accent);
-      margin-bottom: 1rem;
-    }
+        body {
+            background: #0a0a0a;
+            color: white;
+            overflow-x: hidden;
+        }
 
-    .name {
-      font-size: 1.8rem;
-      font-weight: bold;
-      margin-bottom: 0.3rem;
-    }
+        /* NAV */
 
-    .role {
-      font-size: 1rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 100;
+        }
 
-    .bio {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }
+        .logo {
+            font-weight: 600;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
 
-    .social-icons a {
-      margin: 0 0.5rem;
-      text-decoration: none;
-      font-size: 1.4rem;
-      color: var(--accent);
-      transition: transform 0.2s;
-    }
+        .navlinks {
+            display: flex;
+            gap: 30px;
+        }
 
-    .social-icons a:hover {
-      transform: scale(1.2);
-    }
+        .navlinks a {
+            color: white;
+            text-decoration: none;
+            opacity: .7;
+            transition: .3s;
+        }
 
-    .toggle-button {
-      margin-top: 2rem;
-      background-color: var(--accent);
-      border: none;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-  </style>
+        .navlinks a:hover {
+            opacity: 1;
+        }
+
+        /* HERO */
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+        }
+
+        .hero h1 {
+            font-size: 70px;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            opacity: .7;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 30px;
+            border: 1px solid white;
+            text-decoration: none;
+            color: white;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: white;
+            color: black;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 120px 10%;
+        }
+
+        .title {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        /* GRID */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
+            gap: 40px;
+        }
+
+        /* PRODUCT CARDS */
+
+        .card {
+            background: #111;
+            padding: 25px;
+            border-radius: 12px;
+            transition: .4s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .card p {
+            opacity: .7;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            background: #151515;
+        }
+
+        /* IMAGE */
+
+        .card-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 220px;
+        }
+
+        .card-image img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform .5s ease;
+            border-radius: 15px;
+        }
+
+        .card:hover img {
+            transform: scale(1.08);
+        }
+
+        /* BUTTON OVER IMAGE */
+
+        .card-button {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: white;
+            color: black;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+            text-decoration: none;
+            opacity: 0;
+            transition: .4s;
+        }
+
+        .card:hover .card-button {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* NFC SECTION */
+
+        .nfc {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .nfc-text {
+            flex: 1;
+        }
+
+        .nfc-text h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .nfc-text p {
+            opacity: .7;
+            line-height: 1.7;
+        }
+
+        /* BANNER */
+
+        .banner {
+            background: white;
+            color: black;
+            padding: 80px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .banner h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 60px 10%;
+            opacity: .6;
+            text-align: center;
+        }
+
+        /* SCROLL ANIMATION */
+
+        .fade {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1s;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+        }
+
+        .navlinks {
+            display: flex;
+            gap: 30px;
+        }
+
+        .navlinks a {
+            text-decoration: none;
+            color: white;
+            opacity: .8;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:768px) {
+
+            .navlinks {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: black;
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+                padding: 40px 0;
+                display: none;
+            }
+
+            .navlinks.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+        }
+    </style>
 </head>
 
 <body>
-  <div class="card">
-    <img src="images/profile.jpg" alt="Foto de Egael" class="profile-img">
-    <div class="name">Egael Valle</div>
-    <div class="role">Artista</div>
-    <div class="bio">
-      <p>📍 Zacatecas, MX</p>
-      <p>🌵 Director de Pelando la Tuna</p>
-      <p>💻 Estudiante de Ingeniería en Sistemas</p>
-      <p>🎭 Melomano, cantante (en proceso) y fan del arte</p>
-      <p>🎤 Narrador, creativo y laferte </p>
-    </div>
 
-    <div class="social-icons">
-        <a href="https://www.wa.me/524921298921" target="_blank" title="WhatsApp"><i
-            class="fab fa-whatsapp"></i></a>
-        <a href="https://instagram.com/holasoyegael" target="_blank" title="Instagram"><i
-            class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@holasoyegael?_t=zs-8yhghtri99l&_r=1" target="_blank" title="Tik Tok"><i
-            class="fab fa-tiktok"></i></a>
-        <a href="TemplateWeb/index.html" target="_blank" title="Web Ejemplo"><i
-           class="fa-solid fa-globe"></i></a>
-        <p></p>
-        <a href="https://twitter.com/EgaelValle" target="_blank" title="Twitter"><i
-            class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com/elperrocaliente_zac" target="_blank" title="Bussines"><i
-            class="fas fa-hotdog"></i></a>
-        <a href="TemplateCard/index.html" target="_blank" title="Tarjeta de Prueba"><i
-            class="fa-solid fa-address-card"></i></a>
-    </div>
+    <nav>
+        <div class="logo">CAPA ZERO</div>
 
-  </div>
+        <div class="menu-toggle" id="menu-toggle">
+            ☰
+        </div>
+
+        <div class="navlinks" id="navlinks">
+            <a href="#">Inicio</a>
+            <a href="#objetos">Objetos</a>
+            <a href="lab.html">Quienes Somos</a>
+            <a href="#proyectos">Proyectos</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>CAPA ZERO</h1>
+        <p>
+            Un taller creativo donde las ideas se convierten en objetos reales.
+            Exploramos impresión 3D, tecnología NFC y diseño para crear piezas únicas.
+        </p>
+        <div class="hero-buttons">
+            <a class="btn" href="#objetos">Ver proyectos</a>
+            <a class="btn" href="card/index.html">Contacta con nosotros</a>
+        </div>
+    </section>
+
+    <section id="objetos">
+        <h2 class="title fade">Objetos</h2>
+        <div class="grid">
+            <div class="card fade">
+
+                <div class="card-image">
+                    <img src="img/llavero1.jpg" alt="">
+                    <a href="#llaveros" class="card-button">Ver
+                        producto</a>
+                </div>
+
+                <h3>Llaveros</h3>
+                <p>Diseños únicos creados con impresión 3D.</p>
+            </div>
+
+            <div class="card fade">
+                <div class="card-image">
+                    <img src="img/llavero-personalizado.jpg" alt="">
+                    <a href="https://wa.me/524921298921?text=Hola,%20quiero%20información%20sobre%20los%20llaveros%20personalizados" class="card-button">Pedir</a>
+                </div>
+                <h3>Llaveros personalizados</h3>
+                <p>Convertimos ideas en piezas físicas.</p>
+                <p>* Para personalización, contactanos</p>
+            </div>
+
+            <div class="card fade">
+
+                <div class="card-image">
+                    <img src="img/llavero-nfc.jpg" alt="">
+                    <a href="https://wa.me/524921298921?text=Hola,%20quiero%20información%20sobre%20los%20llaveros%20NFC" class="card-button">Pedir</a>
+                </div>
+
+                <h3>Llaveros NFC</h3>
+                <p>Objetos físicos que contienen un link digital, perfectos para tu empresa o emprendimiento</p>
+                <p>* Disponible solo bajo pedido</p>
+                <p>* Personalización de página disponible por costo extra</p>
+
+            </div>
+
+            <div class="card fade">
+                <div class="card-image">
+                    <img src="img/figura1.jpg" alt="">
+                    <a href="#figuras"
+                        class="card-button">Ver producto</a>
+                </div>
+                <h3>Figuras y Juguetes</h3>
+                <p>Objetos creativos y divertidos impresos en 3D</p>
+                <p>* Personalización disponible bajo pedido</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="llaveros">
+
+        <h2 class="title fade">Llaveros</h2>
+        <div class="grid">
+
+            <div class="card fade">
+                <div class="card-image">
+                    <img src="img/letrasKey.JPG">
+                    <a href="https://wa.me/524921298921?text=Hola,%20quiero%20información%20sobre%20los%20llaveros%20de%20letras"
+                        class="card-button">
+                        Pedir
+                    </a>
+                </div>
+                <h3>Llavero Letra</h3>
+                <p>$10 MXN</p>
+                <p>* Todas las letras disponibles</p>
+            </div>
+            <div class="card fade">
+                <div class="card-image">
+                    <img src="img/calavera.jpg">
+                    <a href="https://wa.me/524921298921?text=Hola,%20quiero%20información%20sobre%20el%20llavero%20calavera"
+                        class="card-button">
+                        Pedir
+                    </a>
+                </div>
+                <h3>Llavero Calavera</h3>
+                <p>$15 MXN</p>
+                <p>* Color disponible: Negro, Blanco</p>
+            </div>
+
+            <div class="card fade">
+                <div class="card-image">
+                    <img src="img/fantasmita.JPG">
+                    <a href="https://wa.me/524921298921?text=Hola,%20quiero%20información%20sobre%20el%20llavero%20fantasmita"
+                        class="card-button">
+                        Pedir
+                    </a>
+                </div>
+                <h3>Llavero Fantasmita</h3>
+                <p>$15 MXN</p>
+            </div>
+
+            <div class="card fade">
+                <div class="card-image">
+                    <img src="img/nfc.jpg">
+                    <a href="https://wa.me/524921298921?text=Hola,%20quiero%20información%20sobre%20los%20llaveros%20NFC"
+                        class="card-button">Pedir</a>
+                </div>
+                <h3>Llavero NFC</h3>
+                <p>$30 MXN</p>
+                <p>* No incluye creación de contenido digital</p>
+            </div>
+
+        </div>
+    </section>
+    <section id="figuras">
+        <h2 class="title fade">Figuras</h2>
+        <div class="grid">
+            <div class="card fade">
+                <div class="card-image">
+                    <img src="img/figura1.jpg">
+                    <a href="https://wa.me/524921298921?text=Hola,%20quiero%20información%20sobre%20los%20Dummys"
+                        class="card-button">Pedir</a>
+                </div>
+                <h3>Dummy (Figura Articulada)</h3>
+                <p>$120 MXN</p>
+            </div>
+
+            <div class="card fade">
+                <div class="card-image">
+                    <img src="img/serpiente.jpg">
+                    <a href="https://wa.me/524921298921?text=Hola,%20quiero%20información%20sobre%20la%20serpiente%20articulada"
+                        class="card-button">
+                        Pedir
+                    </a>
+                </div>
+                <h3>Serpiente articulada</h3>
+                <p>$120 MXN</p>
+            </div>
+
+            <div class="card fade">
+                <div class="card-image">
+                    <img src="img/rodilla.JPG">
+                    <a href="https://wa.me/524921298921?text=Hola,%20quiero%20información%20sobre%20la%20rodilla"
+                        class="card-button">
+                        Pedir
+                    </a>
+                </div>
+                <h3>Rodilla</h3>
+                <p>$150 MXN</p>
+            </div>
+        </div>
+
+    <section id="proyectos">
+        <div class="banner fade">
+            <h2>¿Tienes una idea en mente?</h2>
+            <p>Contactanos y hablemos de tu proyecto</p>
+            <br>
+            <a class="btn" href="https://wa.me/524921298921">Escribir por WhatsApp</a>
+        </div>
+    </section>
+    <footer>
+        <p>© Capa Zero</p>
+    </footer>
+    <script>
+        const faders = document.querySelectorAll('.fade')
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show')
+                }
+            })
+        })
+        faders.forEach(el => observer.observe(el))
+
+        const toggle = document.getElementById("menu-toggle");
+        const nav = document.getElementById("navlinks");
+
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
 </body>
 
 </html>
