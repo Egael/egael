@@ -65,7 +65,7 @@
         /* HERO */
 
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -160,8 +160,8 @@
         }
 
         .card-image img {
-            width: 220px;
-            height: 220px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             display: block;
             transition: transform .5s ease;
@@ -253,24 +253,6 @@
             transform: translateY(0);
         }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
-        }
-
-        .navlinks {
-            display: flex;
-            gap: 30px;
-        }
-
-        .navlinks a {
-            text-decoration: none;
-            color: white;
-            opacity: .8;
-        }
-
         .menu-toggle {
             display: none;
             font-size: 28px;
@@ -280,6 +262,18 @@
         /* MOBILE */
 
         @media(max-width:768px) {
+            .hero {
+                padding: 0 6%;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+                line-height: 1.2;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
 
             .navlinks {
                 position: absolute;
@@ -302,6 +296,18 @@
                 display: block;
             }
 
+            .banner {
+                padding: 40px 20px;
+            }
+
+            .banner h2 {
+                font-size: 34px;
+                line-height: 1.2;
+            }
+
+            .banner p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -353,7 +359,8 @@
             <div class="card fade">
                 <div class="card-image">
                     <img src="img/llavero-personalizado.jpg" alt="">
-                    <a href="https://wa.me/524921298921?text=Hola,%20quiero%20información%20sobre%20los%20llaveros%20personalizados" class="card-button">Pedir</a>
+                    <a href="https://wa.me/524921298921?text=Hola,%20quiero%20información%20sobre%20los%20llaveros%20personalizados"
+                        class="card-button">Pedir</a>
                 </div>
                 <h3>Llaveros personalizados</h3>
                 <p>Convertimos ideas en piezas físicas.</p>
@@ -364,7 +371,8 @@
 
                 <div class="card-image">
                     <img src="img/llavero-nfc.jpg" alt="">
-                    <a href="https://wa.me/524921298921?text=Hola,%20quiero%20información%20sobre%20los%20llaveros%20NFC" class="card-button">Pedir</a>
+                    <a href="https://wa.me/524921298921?text=Hola,%20quiero%20información%20sobre%20los%20llaveros%20NFC"
+                        class="card-button">Pedir</a>
                 </div>
 
                 <h3>Llaveros NFC</h3>
@@ -377,8 +385,7 @@
             <div class="card fade">
                 <div class="card-image">
                     <img src="img/figura1.jpg" alt="">
-                    <a href="#figuras"
-                        class="card-button">Ver producto</a>
+                    <a href="#figuras" class="card-button">Ver producto</a>
                 </div>
                 <h3>Figuras y Juguetes</h3>
                 <p>Objetos creativos y divertidos impresos en 3D</p>
@@ -480,35 +487,35 @@
             </div>
         </div>
 
-    <section id="proyectos">
-        <div class="banner fade">
-            <h2>¿Tienes una idea en mente?</h2>
-            <p>Contactanos y hablemos de tu proyecto</p>
-            <br>
-            <a class="btn" href="https://wa.me/524921298921">Escribir por WhatsApp</a>
-        </div>
-    </section>
-    <footer>
-        <p>© Capa Zero</p>
-    </footer>
-    <script>
-        const faders = document.querySelectorAll('.fade')
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show')
-                }
+        <section id="proyectos">
+            <div class="banner fade">
+                <h2>¿Tienes una idea en mente?</h2>
+                <p>Contactanos y hablemos de tu proyecto</p>
+                <br>
+                <a class="btn" href="https://wa.me/524921298921">Escribir por WhatsApp</a>
+            </div>
+        </section>
+        <footer>
+            <p>© Capa Zero</p>
+        </footer>
+        <script>
+            const faders = document.querySelectorAll('.fade')
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show')
+                    }
+                })
             })
-        })
-        faders.forEach(el => observer.observe(el))
+            faders.forEach(el => observer.observe(el))
 
-        const toggle = document.getElementById("menu-toggle");
-        const nav = document.getElementById("navlinks");
+            const toggle = document.getElementById("menu-toggle");
+            const nav = document.getElementById("navlinks");
 
-        toggle.addEventListener("click", () => {
-            nav.classList.toggle("active");
-        });
-    </script>
+            toggle.addEventListener("click", () => {
+                nav.classList.toggle("active");
+            });
+        </script>
 </body>
 
 </html>
