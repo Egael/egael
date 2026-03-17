@@ -259,6 +259,25 @@
             cursor: pointer;
         }
 
+        .social-links {
+            margin-top: 25px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            opacity: .6;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+        }
+
         /* MOBILE */
 
         @media(max-width:768px) {
@@ -323,7 +342,7 @@
 
         <div class="navlinks" id="navlinks">
             <a href="#">Inicio</a>
-            <a href="#objetos">Objetos</a>
+            <a href="#productos">Productos</a>
             <a href="lab.html">Quienes Somos</a>
             <a href="#proyectos">Proyectos</a>
         </div>
@@ -332,24 +351,27 @@
     <section class="hero">
         <h1>CAPA ZERO</h1>
         <p>
-            Un taller creativo donde las ideas se convierten en objetos reales.
-            Exploramos impresión 3D, tecnología NFC y diseño para crear piezas únicas.
+            Desde <strong>Zacatecas</strong>, capa por capa
         </p>
         <div class="hero-buttons">
-            <a class="btn" href="#objetos">Ver proyectos</a>
-            <a class="btn" href="card/index.html">Contacta con nosotros</a>
+            <a class="btn" href="#productos">Ver productos</a>
+            <a class="btn" href="card/index.html">Contactanos</a>
+        </div>
+        <div class="social-links">
+            <a href="https://instagram.com/capazero.3d" target="_blank">Instagram</a>
+            <a href="https://facebook.com/capazero3d" target="_blank">Facebook</a>
+            <a href="https://wa.me/524921298921" target="_blank">WhatsApp</a>
         </div>
     </section>
 
-    <section id="objetos">
-        <h2 class="title fade">Objetos</h2>
+    <section id="productos">
+        <h2 class="title fade">Productos</h2>
         <div class="grid">
             <div class="card fade">
 
                 <div class="card-image">
                     <img src="img/llavero1.jpg" alt="">
-                    <a href="#llaveros" class="card-button">Ver
-                        producto</a>
+                    <a href="#llaveros" class="card-button">Ver</a>
                 </div>
 
                 <h3>Llaveros</h3>
@@ -363,7 +385,7 @@
                         class="card-button">Pedir</a>
                 </div>
                 <h3>Llaveros personalizados</h3>
-                <p>Convertimos ideas en piezas físicas.</p>
+                <p>Convertimos tus ideas en piezas físicas</p>
                 <p>* Para personalización, contactanos</p>
             </div>
 
@@ -371,21 +393,19 @@
 
                 <div class="card-image">
                     <img src="img/llavero-nfc.jpg" alt="">
-                    <a href="https://wa.me/524921298921?text=Hola,%20quiero%20información%20sobre%20los%20llaveros%20NFC"
-                        class="card-button">Pedir</a>
+                    <a href="#funcionales"
+                        class="card-button">Ver</a>
                 </div>
 
-                <h3>Llaveros NFC</h3>
-                <p>Objetos físicos que contienen un link digital, perfectos para tu empresa o emprendimiento</p>
-                <p>* Disponible solo bajo pedido</p>
-                <p>* Personalización de página disponible por costo extra</p>
+                <h3>Objetos Funcionales</h3>
+                <p>Piezas con utilidad y propósito, perfectas para tu día a día</p>
 
             </div>
 
             <div class="card fade">
                 <div class="card-image">
                     <img src="img/figura1.jpg" alt="">
-                    <a href="#figuras" class="card-button">Ver producto</a>
+                    <a href="#figuras" class="card-button">Ver</a>
                 </div>
                 <h3>Figuras y Juguetes</h3>
                 <p>Objetos creativos y divertidos impresos en 3D</p>
@@ -421,7 +441,7 @@
                 </div>
                 <h3>Llavero Calavera</h3>
                 <p>$15 MXN</p>
-                <p>* Color disponible: Negro, Blanco</p>
+                <p>* Colores disponibles: Negro, Blanco</p>
             </div>
 
             <div class="card fade">
@@ -460,6 +480,7 @@
                 </div>
                 <h3>Dummy (Figura Articulada)</h3>
                 <p>$120 MXN</p>
+                <p>* Pregunte por colores disponibles</p>
             </div>
 
             <div class="card fade">
@@ -472,6 +493,7 @@
                 </div>
                 <h3>Serpiente articulada</h3>
                 <p>$120 MXN</p>
+                <p>* Pregunte por colores disponibles</p>
             </div>
 
             <div class="card fade">
@@ -486,36 +508,52 @@
                 <p>$150 MXN</p>
             </div>
         </div>
+    </section>
 
-        <section id="proyectos">
-            <div class="banner fade">
-                <h2>¿Tienes una idea en mente?</h2>
-                <p>Contactanos y hablemos de tu proyecto</p>
-                <br>
-                <a class="btn" href="https://wa.me/524921298921">Escribir por WhatsApp</a>
+    <section id="funcionales">
+        <h2 class="title fade">Objetos funcionales</h2>
+        <div class="grid">
+            <div class="card fade">
+                <div class="card-image">
+                    <img src="img/ganchoMulti.JPG">
+                    <a href="https://wa.me/524921298921?text=Hola,%20quiero%20información%20sobre%20el%20gancho%20multiusos"
+                        class="card-button">Pedir</a>
+                </div>
+                <h3>Gancho Multiusos</h3>
+                <p>$20 MXN</p>
+                <p>* Hasta 300 gramos de carga</p>
             </div>
-        </section>
-        <footer>
-            <p>© Capa Zero</p>
-        </footer>
-        <script>
-            const faders = document.querySelectorAll('.fade')
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('show')
-                    }
-                })
+    </section>
+
+    <section id="proyectos">
+        <div class="banner fade">
+            <h2>¿Tienes una idea en mente?</h2>
+            <p>Contactanos y hablemos de tu proyecto</p>
+            <br>
+            <a href="https://wa.me/524921298921" target="_blank">Escribir por WhatsApp</a>
+        </div>
+    </section>
+    <footer>
+        <p>© Capa Zero</p>
+    </footer>
+    <script>
+        const faders = document.querySelectorAll('.fade')
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show')
+                }
             })
-            faders.forEach(el => observer.observe(el))
+        })
+        faders.forEach(el => observer.observe(el))
 
-            const toggle = document.getElementById("menu-toggle");
-            const nav = document.getElementById("navlinks");
+        const toggle = document.getElementById("menu-toggle");
+        const nav = document.getElementById("navlinks");
 
-            toggle.addEventListener("click", () => {
-                nav.classList.toggle("active");
-            });
-        </script>
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
 </body>
 
 </html>
